@@ -16,7 +16,7 @@ def get_weather(location, base_url='http://wttr.in',
     """
     if params is None:
         params = {'nTqu': '', 'lang': 'en'}
-   url_template = '{}/{}'
+    url_template = '{}/{}'
     url = url_template.format(base_url, location)
     response = requests.get(url, params=params)
     response.raise_for_status()
