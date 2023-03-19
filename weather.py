@@ -1,9 +1,8 @@
 import requests
-default_wttr_params = {'nTqu': '', 'lang': 'en'}
 
 
 def get_weather(location, base_url='http://wttr.in',
-                params=default_wttr_params):
+                params=None):
     """Возвращает прогноз погоды.
 
     Параметры
@@ -15,8 +14,9 @@ def get_weather(location, base_url='http://wttr.in',
     params : str, optional
         Параметры выдачи (по умолчанию 'nTqu&lang=en')
     """
-
-    url_template = '{}/{}'
+    if params is None:
+        params = {'nTqu': '', 'lang': 'en'}
+   url_template = '{}/{}'
     url = url_template.format(base_url, location)
     response = requests.get(url, params=params)
     response.raise_for_status()
