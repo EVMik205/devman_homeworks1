@@ -1,13 +1,15 @@
 import requests
 default_wttr_params = {'nTqu': '', 'lang': 'en'}
 
-def get_weather(location, base_url='http://wttr.in', params=default_wttr_params):
+
+def get_weather(location, base_url='http://wttr.in',
+                params=default_wttr_params):
     """Возвращает прогноз погоды.
-  
+
     Параметры
     ---------
     location : str
-        Место, для которого запрашиваем прогноз.  
+        Место, для которого запрашиваем прогноз.
     base_url : str, optional
         Адрес сервера (по умолчанию 'http://wttr.in').
     params : str, optional
@@ -18,7 +20,7 @@ def get_weather(location, base_url='http://wttr.in', params=default_wttr_params)
     url = url_template.format(base_url, location)
     response = requests.get(url, params=params)
     response.raise_for_status()
-    
+
     return response.text
 
 
@@ -31,6 +33,7 @@ def main():
 
     cherepovets_wttr_params = {'nTqnM': '', 'lang': 'ru'}
     print(get_weather('Череповец', params=cherepovets_wttr_params))
+
 
 if __name__ == '__main__':
     main()

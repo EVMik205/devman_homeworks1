@@ -1,11 +1,35 @@
 # Description
 Python wrapper around [WTTR.in](https://wttr.in/) (console weather reporting service). Sample project for dvmn.org() Python developer course.
 
+# Requirements
+Python3 interpretator (may work on 2.7, but not tested) and `requests` module.
+
 # Installation
-Just copy `weather.py` file to your project directory.
+Copy `weather.py` file to your project directory or clone repo.
+Install Python3, virtualenv and requests module. Example for Ubuntu:
+```
+sudo apt install python3
+sudo apt install python3-pip
+sudo apt install python3-virtualenv
+git clone https://github.com/EVMik205/devman_homeworks1.git
+cd devman_homeworks1
+virtualenv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
 
 # Usage
-get_weather(Location)
+From shell:
+```shell
+$ python3 weather.py
+```
+From Python:
+```python
+from weather import get_weather
+
+print(get_weather('Moscow'))
+```
+
 Default parameters:
 * only day and night
 * no colors
