@@ -25,13 +25,11 @@ def get_weather(location, base_url='http://wttr.in',
 
 
 def main():
-    print(get_weather('san francisco'))
-
-    offices = ('Лондон', 'svo', 'Череповец')
+    offices = ('san francisco', 'Лондон', 'svo')
     for office in offices:
         print(get_weather(office))
 
-    cherepovets_wttr_params = {'nTqnM': '', 'lang': 'ru'}
+    cherepovets_wttr_params = {'nTqM': '', 'lang': 'ru'}
     print(get_weather('Череповец', params=cherepovets_wttr_params))
 
 
